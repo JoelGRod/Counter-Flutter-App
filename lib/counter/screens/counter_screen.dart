@@ -32,8 +32,11 @@ class _CounterScreenState extends State<CounterScreen> {
                 'Clicks Counter',
                 style: font30,
               ),
-              Text('$counter', style: font20),
-            ]),
+              Text(
+                '$counter', 
+                style: font20),
+            ]
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
@@ -41,7 +44,8 @@ class _CounterScreenState extends State<CounterScreen> {
           onPressed: () {
             counter++;        // Change state
             setState(() {});  // Update screen
-          }),
+          }
+      ),
     );
   }
 }
