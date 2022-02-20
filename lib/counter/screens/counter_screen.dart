@@ -38,13 +38,32 @@ class _CounterScreenState extends State<CounterScreen> {
             ]
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () {
-            counter++;        // Change state
-            setState(() {});  // Update screen
-          }
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          FloatingActionButton(
+              child: const Icon(Icons.restart_alt),
+              onPressed: () => setState(() => counter = 0)
+          ),
+
+          // const SizedBox(width: 10),
+
+          FloatingActionButton(
+              child: const Icon(Icons.remove),
+              onPressed: () => setState(() => counter--)
+          ),
+
+          // const SizedBox(width: 10),
+
+          FloatingActionButton(
+              child: const Icon(Icons.add),
+              onPressed: () {
+                counter++;        // Change state
+                setState(() {});  // Update screen
+              }
+          ),
+        ],
       ),
     );
   }
